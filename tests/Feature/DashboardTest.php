@@ -14,11 +14,11 @@ test('dashboard renders warehouse metrics for verified users', function () {
 
     $this->actingAs($user)
         ->get('/dashboard')
-        ->assertSee('Total Products')
-        ->assertSee('Total Stock')
-        ->assertSee('Low Stock')
-        ->assertSee('Total Warehouses')
-        ->assertSee('Pending Requests');
+        ->assertSee('Total Produk')
+        ->assertSee('Total Stok')
+        ->assertSee('Stok Menipis')
+        ->assertSee('Total Gudang')
+        ->assertSee('Permintaan Tertunda');
 });
 
 test('sidebar renders product navigation only when the user has its permission', function () {
@@ -27,13 +27,13 @@ test('sidebar renders product navigation only when the user has its permission',
 
     $this->actingAs($user)
         ->get('/dashboard')
-        ->assertDontSee('<span>Products</span>', false);
+        ->assertDontSee('<span>Produk</span>', false);
 
     $user->givePermissionTo('view products');
 
     $this->actingAs($user)
         ->get('/dashboard')
-        ->assertSee('<span>Products</span>', false);
+        ->assertSee('<span>Produk</span>', false);
 });
 
 test('admin sees administrative navigation links', function () {
@@ -43,6 +43,6 @@ test('admin sees administrative navigation links', function () {
 
     $this->actingAs($user)
         ->get('/dashboard')
-        ->assertSee('<span>Users &amp; Roles</span>', false)
-        ->assertSee('<span>Activity Logs</span>', false);
+        ->assertSee('<span>Pengguna &amp; Peran</span>', false)
+        ->assertSee('<span>Log Aktivitas</span>', false);
 });

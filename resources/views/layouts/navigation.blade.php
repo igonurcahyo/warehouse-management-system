@@ -3,12 +3,12 @@
     $isAdmin = $user?->hasRole('Admin') ?? false;
     $menuItems = [
         ['label' => 'Dasbor', 'permission' => 'view dashboard', 'route' => 'dashboard', 'icon' => 'grid'],
-        ['label' => 'Inventaris', 'permission' => 'view inventory', 'icon' => 'box'],
+        ['label' => 'Inventaris', 'permission' => 'view inventory', 'route' => 'inventory.index', 'icon' => 'box'],
         ['label' => 'Produk', 'permission' => 'view products', 'icon' => 'tag'],
-        ['label' => 'Kategori', 'permission' => 'view categories', 'icon' => 'layers'],
+        ['label' => 'Kategori', 'permission' => 'view categories', 'route' => 'categories.index', 'icon' => 'layers'],
         ['label' => 'Pemasok', 'permission' => 'view suppliers', 'icon' => 'building'],
         ['label' => 'Satuan', 'permission' => 'view units', 'icon' => 'scale'],
-        ['label' => 'Gudang', 'permission' => 'view warehouses', 'icon' => 'home'],
+        ['label' => 'Gudang', 'permission' => 'view warehouses', 'route' => 'warehouses.index', 'icon' => 'home'],
         ['label' => 'Transaksi', 'permission' => 'view transactions', 'icon' => 'arrows'],
         ['label' => 'Permintaan Material', 'permission' => 'view requests', 'icon' => 'clipboard'],
         ['label' => 'Laporan', 'permission' => 'view reports', 'icon' => 'chart'],
